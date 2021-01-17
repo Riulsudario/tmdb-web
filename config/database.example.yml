@@ -2,16 +2,16 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: secret123
+  username: your_user
+  password: your_password
 
 development:
   <<: *default
-  database: tmdb_web_development
+  database: project_name_development
 
 test:
   <<: *default
-  database: tmdb_web_test
+  database: project_name_test
 
 production:
   <<: *default
