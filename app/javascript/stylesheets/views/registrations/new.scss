@@ -1,0 +1,250 @@
+$default_gray: #707070;
+$default-red: #db131d;
+$form-background: #F5F5F5;
+$white: #FFFFFF;
+
+
+  .create-user {
+    background-color: $form-background;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .register-container {
+    background-color: $white;
+    width: 94vw;
+    height: 90vh;
+
+    border-radius: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "a b b"
+      "a b b"
+      "a b b";
+
+    .login-box {
+      background-color: $default-red;
+      grid-area: a;
+      color: $white;
+      text-align: center;
+      padding: 50px;
+
+      border-radius: 30px 0 0 32px;
+
+      .back {
+        margin: 0;
+        padding: 0;
+        border: none;
+        position: relative;
+      }
+
+      .back:hover {
+        background: transparent;
+      }
+      .back-arrow {
+        width: 38px;
+        transform: scaleX(-1);
+        position: relative;
+        left: -50%;
+        top: -25px;
+        }
+
+        h2 {
+          margin-top: 70px;
+          font-family: "SegoeBold";
+        }
+
+        p {
+          font-family: "SegoeRegular";
+          font-size: 18px;
+          margin-bottom: 50px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $white;
+          font-family: "SegoeBold";
+          padding: 10px 100px 10px 100px;
+          border: 2px solid $white;
+          border-radius: 100px;
+          cursor: pointer;
+        }
+
+        a:hover {
+          background-color: $white;
+          color: $default-red;
+          transition: 0.3s;
+        }
+    }
+
+    .register-form {
+      grid-area: b;
+      text-align: center;
+
+      h1 {
+        margin-top: 70px;
+        margin-bottom: 10px;
+        font-family: "SegoeBold";
+        color: $default_gray;
+      }
+
+      a {
+        text-decoration: none;
+        .omni-auth {
+          width: 32px;
+          padding: 15px;
+          border: 2px solid $default_gray;
+          border-radius: 100%;
+          margin: 10px;
+        }
+      }
+
+      p {
+        font-family: "SegoeRegular";
+        color: $default_gray;
+        font-size: 24px;
+        margin-top: 0;
+      }
+
+      .previous-container {
+        height: 0;
+        a {
+          position: relative;
+          left: -200px;
+          top: -50px;
+          .previous {
+            width: 30px;
+            transform: scaleX(-1);
+          }
+        }
+      }
+
+      .register-form-container {
+        display: none;
+
+        .field {
+          position: relative;
+          line-height: 14px;
+          margin: 0 10px;
+          display: inline-block;
+
+          p {
+            font-size: 18px;
+            margin: 0 30px;
+            text-align: left;
+          }
+          .input {
+            position: relative;
+            border: #A3AEB2 solid 1px;
+            border-radius: 8px;
+            padding-left: 20px;
+            padding-right: 16px;
+            width: 370px;
+            height: 50px;
+            color: $default_gray;
+            font-size: 16px;
+            font-family: "SegoeRegular";
+            margin: 12px;
+
+            &:invalid + label {
+              transform: translateY(0);
+            }
+
+            &:focus {
+              & + label {
+                outline: none;
+                border: none;
+                transform: translateY(-24px);
+              }
+            }
+          }
+
+          label {
+            color: $default_gray;
+            font-size: 18px;
+            position: absolute;
+            z-index: 2;
+            left: 30px;
+            top: 30px;
+            padding: 0 2px;
+            pointer-events: none;
+            background: white;
+            transition: transform 300ms ease;
+            transform: translateY(-26px);
+            font-family: "SegoeRegular";
+          }
+        }
+
+        .upload-picture {
+          font-family: "SegoeRegular";
+          color: $default_gray;
+          font-size: 24px;
+          text-decoration: underline;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0 0 0;
+        }
+
+        .avatar-upload {
+          display: none;
+        }
+        .image-container {
+          width: 40px;
+          padding: 15px;
+          border: 2px solid $default_gray;
+          border-radius: 100%;
+          margin: 0 auto;
+
+          .omni-auth {
+            width: 32px;
+          }
+        }
+      }
+
+      .buttons {
+        .continue-register {
+          text-align: right;
+          a {
+            font-family: "SegoeRegular";
+            font-size: 20px;
+            text-decoration: none;
+            color: $default_gray;
+            position: fixed;
+            right: 19%;
+
+            .right-arrow {
+              width: 30px;
+              position: relative;
+              top: 10px;
+            }
+          }
+
+        }
+            .submit-button {
+              position: relative;
+              background-color: $default-red;
+              border: $default-red solid 1px;
+              border-radius: 8px;
+              padding-left: 20px;
+              padding-right: 16px;
+              width: 408px;
+              height: 50px;
+              color: $white;
+              font-size: 20px;
+              font-family: "SegoeBold";
+              margin: 12px;
+            }
+      }
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
