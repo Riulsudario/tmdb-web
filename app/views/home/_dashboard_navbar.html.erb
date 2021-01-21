@@ -3,7 +3,7 @@
     <%= text_field_tag 'search', nil, class: 'search', placeholder: 'Search for...' %>
   </div>
   <div class="links">
-    <%= tag.a t('views.home.dashboard.movies'), href: '#'%>
+    <%= tag.a t('views.home.dashboard.movies'), href: dashboard_path %>
     <%= tag.a t('views.home.dashboard.watchlist'), href: '#' %>
     <%= tag.a t('views.home.dashboard.watched_list'), href: '#' %>
   </div>
