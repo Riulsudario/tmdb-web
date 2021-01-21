@@ -2,7 +2,7 @@
   <%= render partial: 'dashboard_navbar' %>
   <div class='container'>
     <div class="title-container">
-      <p>Veja os filmes em cartaz!</p>
+      <%= tag.p t('views.home.dashboard.now_playing') %>
     </div>
     <div class='movie-container'>
       <% @movies.first(15).each do |movie| %>
