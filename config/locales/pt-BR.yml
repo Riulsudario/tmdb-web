@@ -180,3 +180,10 @@ pt-BR:
         facebook_logged_in: Você foi conectado à aplicação com sua conta do Facebook!
         google_logged_in: Você foi conectado à aplicação com sua conta do Google!
         forgot_password: Esqueceu sua senha?
+    home:
+      dashboard:
+        search_for: Procure por...
+        movies: Filmes
+        watchlist: Watchlist
+        watched_list: Filmes assistidos
+        now_playing: Veja os filmes em cartaz!
