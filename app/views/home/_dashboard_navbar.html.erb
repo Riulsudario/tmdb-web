@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="search-bar">
+    <%= text_field_tag 'search', nil, class: 'search', placeholder: 'Search for...' %>
+  </div>
+  <div class="links">
+    <%= tag.a t('views.home.dashboard.movies'), href: '#'%>
+    <%= tag.a t('views.home.dashboard.watchlist'), href: '#' %>
+    <%= tag.a t('views.home.dashboard.watched_list'), href: '#' %>
+  </div>
+  <div class="user-content">
+    <%= image_tag('notification.svg', class: 'notification') %>
+    <%= image_tag(current_user.avatar.url.present? ? current_user.avatar.url : 'avatar.svg', class: 'user-avatar') %>
+  </div>
+</div>
