@@ -1,0 +1,11 @@
+.information-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "content content content sidebar"
+    ". . . ."
+    ". . . .";
+}
