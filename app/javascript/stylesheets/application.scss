@@ -1,6 +1,15 @@
+// Views
 @import './views/registrations/new';
 @import './views/sessions/new';
-@import './views/home/dashboard/navbar';
 @import './views/home/dashboard/dashboard';
-@import './globals.scss';
+@import './views/movies/show';
+
+// Components
+@import './views/components/navbar';
+@import './views/components/movie/overview';
+
+// Toastr
 @import 'toastr';
+
+// Global css
+@import './globals.scss';
