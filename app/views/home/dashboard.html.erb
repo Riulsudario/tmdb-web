@@ -4,16 +4,6 @@
     <div class="title-container">
       <%= tag.p t('views.home.dashboard.now_playing') %>
     </div>
-    <div class='movie-container'>
-      <% @movies.first(15).each do |movie| %>
-        <% if movie %>
-          <div class="movie">
-            <%= link_to movie_path(id: movie.id) do %>
-              <%= image_tag("#{@configuration.base_url}w154#{movie.poster_path}") if movie.poster_path %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render partial: './components/movies_list' %>
   </div>
 </div>
