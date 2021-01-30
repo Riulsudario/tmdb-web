@@ -2,5 +2,8 @@
   <%= render partial: './components/dashboard_navbar' %>
   <%= render partial: './components/movie/overview' %>
   <%= render partial: './components/movie/informations' %>
-  <%= render partial: './components/movie/similar_movies' %>
+
+  <% if @similar_movies.present? %>
+    <%= render partial: './components/movie/similar_movies' %>
+  <% end %>
 </div>
