@@ -1,0 +1,59 @@
+<div class='sidebar'>
+  <div class='share-container'>
+    <%= tag.p 'Compartilhe o filme em suas redes sociais!', class: 'title' %>
+    <div class='icons-container'>
+      <div class='icons-content' title='Share with Facebook!'>
+        <%= image_tag 'facebook-white.svg', class: 'icon-white' %>
+        <%= image_tag 'facebook-black.svg', class: 'icon-black' %>
+      </div>
+
+      <div class='icons-content' title='Share with Twitter!'>
+        <%= image_tag 'twitter-white.svg', class: 'icon-white' %>
+        <%= image_tag 'twitter-black.svg', class: 'icon-black' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='some-infos'>
+    <%= tag.p 'Some infos about the movie' %>
+    <div class='info-container'>
+      <div class='info-title'>
+        <%= tag.p 'Status' %>
+      </div>
+      <div class='info-text'>
+        <%= tag.p @movie['status'] %>
+      </div>
+    </div>
+
+    <div class='info-container'>
+      <div class='info-title'>
+        <%= tag.p 'Release date' %>
+      </div>
+      <div class='info-text'>
+        <%= tag.p @movie['release_date'].to_date.strftime('%d/%m/%Y') %>
+      </div>
+    </div>
+
+    <div class='info-container'>
+      <div class='info-title'>
+        <%= tag.p 'Runtime' %>
+      </div>
+      <div class='info-text'>
+        <%= tag.p "#{@movie['runtime']} min" %>
+      </div>
+    </div>
+
+    <div class='info-container'>
+      <div class='info-title'>
+        <%= tag.p 'Genres' %>
+      </div>
+      <% @movie['genres'].each do |genre| %>
+        <% if genre %>
+          <div class='info-text'>
+            <%= tag.p "#{genre['name']};" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

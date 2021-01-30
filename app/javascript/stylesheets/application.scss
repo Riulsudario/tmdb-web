@@ -1,6 +1,21 @@
+// Views
 @import './views/registrations/new';
 @import './views/sessions/new';
-@import './views/home/dashboard/navbar';
 @import './views/home/dashboard/dashboard';
-@import './globals.scss';
+@import './views/movies/show';
+
+// Components
+@import './views/components/navbar';
+@import './views/components/movie/overview';
+@import './views/components/movie/informations';
+@import './views/components/movie/sidebar';
+@import './views/components/movie/trailers';
+@import './views/components/movie/similar_movies';
+@import './views/components/movie/collection';
+
+// Toastr
 @import 'toastr';
+
+// Global css
+@import './globals.scss';
+@import './scrollbar.scss';

@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "home#index"
 
   get :dashboard, controller: :home, action: :dashboard
+  get :movie, controller: :movies, action: :show
 end

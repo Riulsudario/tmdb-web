@@ -1,0 +1,127 @@
+.background-poster {
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  z-index: -1;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.movie-details-containter {
+  margin: 10vh 0 0 0;
+  height: fit-content;
+  background-color: rgba(13, 17, 23, 0.9);
+
+  .details-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 60px 0 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "poster header"
+      "poster overview"
+      "poster company-infos";
+
+    .poster {
+      grid-area: poster;
+    }
+
+    .header {
+      grid-area: header;
+
+      .title {
+        color: white;
+        font-family: MontserratBold;
+        font-size: 25px;
+        margin: 0;
+      }
+
+      .tagline {
+        color: white;
+        font-family: MontserratSemiBold;
+        font-size: 14px;
+        margin: 0;
+      }
+
+      .icons-container {
+        display: inline-flex;
+
+        .icons-content {
+          width: fit-content;
+          height: fit-content;
+          margin: 10px;
+          padding: 15px;
+          border-radius: 100px;
+          border: 2px solid white;
+          cursor: pointer;
+
+          .icon-shape {
+            width: 20px;
+            display: none;
+          }
+
+          .icon-line {
+            width: 20px;
+            display: block;
+          }
+        }
+
+        .icons-content:hover {
+          background-color: white;
+          .icon-shape {
+            display: block;
+          }
+
+          .icon-line {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .overview {
+      grid-area: overview;
+
+      .overview-title {
+        color: white;
+        font-family: MontserratSemiBold;
+        font-size: 18px;
+        margin: 0 0 10px 0;
+      }
+
+      .overview-text {
+        color: white;
+        font-family: MontserratRegular;
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    .company-infos {
+      grid-area: company-infos;
+
+      .cast-title {
+        color: white;
+        font-family: MontserratBold;
+        font-size: 16px;
+        margin: 20px 0 0 0;
+      }
+
+      .cast-container {
+        margin: 10px 0 0 0;
+
+        .cast-text {
+          color: white;
+          font-family: MontserratSemiBold;
+          font-size: 16px;
+          display: inline;
+        }
+      }
+    }
+  }
+}
