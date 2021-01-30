@@ -1,0 +1,6 @@
+<div class='collection-poster' style='background-image: url(<%= "#{@configuration.base_url}w1920_and_h1080_face#{@collection['backdrop_path']}" %>)'></div>
+<div class='collection-container'>
+  <%= tag.p @collection['name'], class:'collection-title' %>
+  <%= tag.p @collection['overview'], class:'collection-text' %>
+  <%= tag.p 'View collection', class: 'button' %>
+</div>

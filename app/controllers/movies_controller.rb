@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
 	before_action :cast
 	before_action :trailers
 	before_action :similar_movies
+	before_action :collection
 
 	def show
 	end
@@ -41,4 +42,12 @@ class MoviesController < ApplicationController
 		@similar_movies if @similar_movies.present?
 	end
 
+	def collection
+		collection = @movie['belongs_to_collection']
+
+		return unless collection.present?
+
+		@collection = Tmdb::Collection.detail(collection['id'])
+		@collection if @collection.present?
+	end
 end

@@ -3,6 +3,10 @@
   <%= render partial: './components/movie/overview' %>
   <%= render partial: './components/movie/informations' %>
 
+  <% if @collection.present? %>
+    <%= render partial: './components/movie/collection' %>
+  <% end %>
+
   <% if @similar_movies.present? %>
     <%= render partial: './components/movie/similar_movies' %>
   <% end %>
