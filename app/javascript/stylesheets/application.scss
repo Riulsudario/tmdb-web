@@ -3,9 +3,11 @@
 @import './views/sessions/new';
 @import './views/home/dashboard/dashboard';
 @import './views/movies/show';
+@import './views/search/index';
 
 // Components
 @import './views/components/navbar';
+@import './views/components/movies_list';
 @import './views/components/movie/overview';
 @import './views/components/movie/informations';
 @import './views/components/movie/sidebar';

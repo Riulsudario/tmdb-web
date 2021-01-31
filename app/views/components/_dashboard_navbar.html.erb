@@ -1,11 +1,13 @@
 <div class="navbar">
   <div class="search-bar">
-    <%= text_field_tag 'search', nil, class: 'search', placeholder: t('views.home.dashboard.search_for') %>
+  	<%= form_tag("/search", method: :get) do %>
+      <%= text_field_tag :query, nil, class: 'search', placeholder: 'Search for...', autocomplete: 'off' %>
+    <% end %>
   </div>
   <div class="links">
-    <%= tag.a t('views.home.dashboard.movies'), href: dashboard_path %>
-    <%= tag.a t('views.home.dashboard.watchlist'), href: '#' %>
-    <%= tag.a t('views.home.dashboard.watched_list'), href: '#' %>
+    <%= tag.a 'Movies', href: dashboard_path %>
+    <%= tag.a 'Watchlist', href: '#' %>
+    <%= tag.a 'Watchedlist', href: '#' %>
   </div>
   <div class="user-content">
     <%= image_tag('notification.svg', class: 'notification') %>

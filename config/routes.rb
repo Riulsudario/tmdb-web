@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get :dashboard, controller: :home, action: :dashboard
   get :movie, controller: :movies, action: :show
+  get :search, controller: :search, action: :index
 end
