@@ -1,0 +1,7 @@
+<%= form_tag(p_watchlist_delete_path(watchlist_id: @movie['id']), method: :delete, id: 'watchlist-form') do %>
+  <div onClick="document.forms['watchlist-form'].submit();" class='icons-content' title='Remove movie from watchlist'>
+    <%= hidden_field_tag :movie_id, @movie['id'] %>
+    <%= image_tag 'unlike-shape.svg', class: 'icon-shape' %>
+    <%= image_tag 'unlike-line.svg', class: 'icon-line' %>
+  </div>
+<% end %>

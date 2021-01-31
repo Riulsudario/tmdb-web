@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
 	before_action :trailers
 	before_action :similar_movies
 	before_action :collection
+	before_action :movie_on_watchlist?
 
 	def show
 	end
@@ -54,5 +55,9 @@ class MoviesController < ApplicationController
 
 		@collection = Tmdb::Collection.detail(collection['id'])
 		@collection if @collection.present?
+	end
+
+	def movie_on_watchlist?
+		@movie_on_watchlist = @profile.watchlists.find_by(movie_id: movie_params[:id])
 	end
 end

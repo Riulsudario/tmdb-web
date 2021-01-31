@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
       flash[:notice] = 'Profile created!'
       redirect_to profiles_path
     else
-      flash[:alert] = 'Something wrong.'
+      flash[:alert] = 'Something went wrong.'
       redirect_to new_profile_path
     end
   end

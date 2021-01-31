@@ -1,0 +1,8 @@
+<div class='watchlist-container'>
+  <%= render partial: './components/dashboard_navbar' %>
+
+  <% @movies = @watchlist %>
+  <% if @movies.present? %>
+    <%= render partial: './components/watchlist/movies_list' %>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_024541) do
+ActiveRecord::Schema.define(version: 2021_01_31_074356) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -41,5 +41,14 @@ ActiveRecord::Schema.define(version: 2021_01_31_024541) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "watchlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_watchlists_on_profile_id"
+  end
+
   add_foreign_key "profiles", "users"
+  add_foreign_key "watchlists", "profiles"
 end
