@@ -26,16 +26,6 @@ class WatchedlistsController < ApplicationController
     redirect_to p_movie_path(id: watchedlist_params[:movie_id ])
   end
 
-  def delete
-    remove = @profile.watchedlists.find_by(movie_id: watchedlist_params[:watchlist_id]).delete
-    if remove.present?
-      flash[:notice] = 'Movie removed from your Watchlist!'
-    else
-      flash[:alert] = 'Something went wrong.'
-    end
-    redirect_to p_movie_path(id: watchedlist_params[:movie_id ])
-  end
-
   private
 
   def watchedlist_params

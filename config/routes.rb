@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     end
 
     resources :watchedlists do
-      delete :delete, action: :delete
     end
   end
 
