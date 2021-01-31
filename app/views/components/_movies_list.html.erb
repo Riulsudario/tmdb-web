@@ -1,5 +1,5 @@
 <div class='movie-container'>
-  <% @movies.first(15).each do |movie| %>
+  <% @movies.each do |movie| %>
     <% if movie.poster_path %>
       <div class="movie">
         <%= link_to p_movie_path(id: movie.id) do %>

@@ -11,10 +11,12 @@
           <%= tag.p @movie['tagline'], class: 'tagline' %>
 
           <div class='icons-container'>
-            <div class='icons-content' title='Add movie to watchlist'>
-              <%= image_tag 'bookmark-shape.svg', class: 'icon-shape' %>
-              <%= image_tag 'bookmark-line.svg', class: 'icon-line' %>
-            </div>
+            <% if @movie_on_watchlist.present? %>
+              <%= render partial: './components/movie/remove_from_watchlist' %>
+            <% else %>
+              <%= render partial: './components/movie/add_to_watchlist' %>
+            <% end %>
+
 
             <div class='icons-content' title='Add movie to watched list'>
               <%= image_tag 'list-text-black.svg', class: 'icon-shape' %>

@@ -1,0 +1,11 @@
+<div class='movie-container'>
+  <% @movies.each do |movie| %>
+    <% if movie['poster_path'] %>
+      <div class="movie">
+        <%= link_to p_movie_path(id: movie['id']) do %>
+          <%= image_tag("#{@configuration.base_url}w154#{movie['poster_path']}") if movie['poster_path'] %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
