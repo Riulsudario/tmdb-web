@@ -21,7 +21,6 @@ window.jQuery = $;
 window.$ = $;
 
 require('../stylesheets/application')
-require('./show_image')
 require('../registrations/new')
 global.toastr = require('toastr')
 require('jquery')
