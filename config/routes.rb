@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     get :search, controller: :search, action: :index
     get :suggested, controller: :suggested, action: :index
 
+    resources :collections do
+    end
+
     resources :watchlists do
       delete :delete, action: :delete
     end

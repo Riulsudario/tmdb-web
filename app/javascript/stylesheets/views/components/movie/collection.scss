@@ -28,13 +28,18 @@
 
   .button {
     cursor: pointer;
+    background-color: white;
+
     text-align: center;
-    margin: 50px auto 0;
     color: #0d1117;
     font-family: MontserratBold;
-    background-color: white;
+    text-decoration: none;
+
+    margin: 50px auto 0;
     width: 300px;
     padding: 10px;
+    display: block;
+
     border: 3px white solid;
     border-radius: 100px;
   }
