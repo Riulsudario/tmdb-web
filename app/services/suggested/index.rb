@@ -30,6 +30,8 @@ class Suggested::Index < BusinessProcess::Base
 
     return unless @movies.present?
 
+    @movies = @movies.flatten
+
     find_similar_movies
   end
 
