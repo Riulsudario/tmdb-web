@@ -13,15 +13,10 @@
           <div class='icons-container'>
             <% if @movie_on_watchlist.present? %>
               <%= render partial: './components/movie/remove_from_watchlist' %>
+              <%= render partial: './components/movie/add_to_watchedlist' %>
             <% else %>
               <%= render partial: './components/movie/add_to_watchlist' %>
             <% end %>
-
-
-            <div class='icons-content' title='Add movie to watched list'>
-              <%= image_tag 'list-text-black.svg', class: 'icon-shape' %>
-              <%= image_tag 'list-text.svg', class: 'icon-line' %>
-            </div>
           </div>
         </div>
 

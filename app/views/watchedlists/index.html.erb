@@ -1,10 +1,11 @@
-<div class='watchlist-container'>
+<div class='watchedlist-container'>
   <%= render partial: './components/dashboard_navbar' %>
+
   <div class='title-container'>
-    <%= tag.p 'Movies you want to watch' %>
+    <%= tag.p 'Movies you have watched' %>
   </div>
 
-  <% @movies = @watchlist %>
+  <% @movies = @watchedlist %>
   <% if @movies.present? %>
     <%= render partial: './components/watchlist/movies_list' %>
   <% end %>
