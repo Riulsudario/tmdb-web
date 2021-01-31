@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :watchlists do
       delete :delete, action: :delete
     end
+
+    resources :watchedlists do
+      delete :delete, action: :delete
+    end
   end
 
 end

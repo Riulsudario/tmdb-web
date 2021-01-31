@@ -1,6 +1,8 @@
 class Profile < ApplicationRecord
   belongs_to :user
+
   has_many :watchlists
+  has_many :watchedlists
 
   mount_uploader :avatar, AvatarUploader
 
