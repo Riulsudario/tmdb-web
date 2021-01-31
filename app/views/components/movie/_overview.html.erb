@@ -1,4 +1,4 @@
-<div class='background-poster' style='background-image: url(<%= "#{@configuration.base_url}w1920_and_h1080_face#{@images['backdrops'].first['file_path']}" %>)'></div>
+<div class='background-poster' style='background-image: url(<%= "#{@configuration.base_url}w1920_and_h1080_face#{@images['backdrops'].first['file_path'] if @images['backdrops'].present?}" %>)'></div>
 
   <div class='movie-details-containter'>
     <div class='details-container'>
