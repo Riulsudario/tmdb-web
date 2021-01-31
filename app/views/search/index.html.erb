@@ -1,0 +1,20 @@
+<div class='search-container'>
+  <%= render partial: './components/dashboard_navbar' %>
+
+  <% if @movies.present? %>
+    <div class='title-container'>
+      <%= tag.p "Results of your search: #{@query}" %>
+    </div>
+    <%= render partial: './components/movies_list' %>
+
+  <% else %>
+    <% @movies = @popular %>
+
+    <div class='no-results-container'>
+      <%= tag.p "No results of your search: #{@query}", class: 'no-results-title' %>
+      <%= tag.p 'Movies you might like:', class: 'no-results-text' %>
+    </div>
+
+    <%= render partial: './components/movies_list' %>
+  <% end %>
+</div>
