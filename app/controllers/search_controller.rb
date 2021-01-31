@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   before_action :authenticate_user!
+  before_action :profile
   before_action :query
   before_action :movies
 
@@ -7,6 +8,10 @@ class SearchController < ApplicationController
   end
 
   private
+
+  def profile
+    @profile = current_user.profiles[params[:p_id].to_i]
+  end
 
   def search_params
     params.permit(:query)

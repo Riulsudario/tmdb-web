@@ -1,0 +1,18 @@
+<div class='list-profile-container'>
+  <%= tag.p 'Who is watching?' %>
+  <div class='profile-container'>
+    <% @profiles.each_with_index do |profile, i|  %>
+      <% if profile %>
+        <%= link_to p_dashboard_path(p_id: i), class:'profile-content' do %>
+          <% if profile.avatar.present? %>
+            <div class='background-profile' style='background-image: url(<%= profile.avatar.url %>)'></div>
+          <% end %>
+          <%= tag.p profile.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <div class='create-profile-content'>
+    <%= image_tag 'add.svg' %>
+  </div>
+  </div>
+</div>

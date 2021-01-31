@@ -5,12 +5,12 @@
     <% end %>
   </div>
   <div class="links">
-    <%= tag.a 'Movies', href: dashboard_path %>
+    <%= tag.a 'Home', href: p_dashboard_path %>
     <%= tag.a 'Watchlist', href: '#' %>
     <%= tag.a 'Watchedlist', href: '#' %>
   </div>
   <div class="user-content">
     <%= image_tag('notification.svg', class: 'notification') %>
-    <%= image_tag(current_user.avatar.url.present? ? current_user.avatar.url : 'avatar.svg', class: 'user-avatar') %>
+    <%= image_tag(@profile.avatar.url.present? ? @profile.avatar.url : 'avatar.svg', class: 'user-avatar') %>
   </div>
 </div>
