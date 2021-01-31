@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  get :profiles, controller: :profiles, action: :index
+  resources :profiles do
+  end
 
   resources :p do
     get :dashboard, controller: :home, action: :dashboard

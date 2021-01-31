@@ -11,8 +11,9 @@
         <% end %>
       <% end %>
     <% end %>
-  <div class='create-profile-content'>
-    <%= image_tag 'add.svg' %>
-  </div>
+
+    <%= link_to new_profile_path, class:'create-profile-content' do %>
+      <%= image_tag 'add.svg' %>
+    <% end %>
   </div>
 </div>

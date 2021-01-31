@@ -20,7 +20,8 @@ import "../stylesheets/application.scss"
 window.jQuery = $;
 window.$ = $;
 
-require('../stylesheets/application') 
+require('../stylesheets/application')
+require('./show_image')
 require('../registrations/new')
 global.toastr = require('toastr')
 require('jquery')
