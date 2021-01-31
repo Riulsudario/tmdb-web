@@ -6,7 +6,7 @@
     <div class='mount-similar' >
 		  <% @similar_movies.first(25).each do |movie| %>
   			  <% if movie %>
-  				  <%= link_to movie_path(id: movie.id) do %>
+  				  <%= link_to p_movie_path(id: movie.id) do %>
   					  <%= image_tag("#{@configuration.base_url}w200#{movie.poster_path}") if movie.poster_path %>
   				  <% end %>
   			  <% end %>

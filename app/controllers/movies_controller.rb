@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
 	before_action :authenticate_user!
+	before_action :profile
 	before_action :movie_params
 	before_action :movie
 	before_action :images
@@ -16,6 +17,10 @@ class MoviesController < ApplicationController
 	def movie_params
 		params.permit(:id)
 	end
+
+  def profile
+    @profile = current_user.profiles[params[:p_id].to_i]
+  end
 
 	def movie
 		@movie = Tmdb::Movie.detail(movie_params[:id])

@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  has_many :profiles, dependent: :destroy
+
   validates_presence_of :name
   validates_presence_of :email
 
