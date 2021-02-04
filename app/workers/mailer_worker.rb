@@ -1,0 +1,2 @@
+class MailerWorker < BaseWorker
+end

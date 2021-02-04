@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
 
   has_many :watchlists
   has_many :watchedlists
+  has_many :schedule_movies
 
   mount_uploader :avatar, AvatarUploader
 
