@@ -1,4 +1,4 @@
-class ScheduleMovieWorker < BaseWorker
+class ScheduleMoviesWorker < BaseWorker
   include Sidekiq::Worker
 
   sidekiq_options retry: 2
@@ -13,10 +13,11 @@ class ScheduleMovieWorker < BaseWorker
     return unless user.present?
 
     log('---- Schedule Movies ----')
-    if push_date.to_datetime < DateTime.current
+    if push_date.to_datetime > DateTime.current - 2.hours
       log("PUSH_BODY: #{push_body}, to user with email #{user.email}, at #{push_date}")
       ContactMailer.contact_created.deliver_now
       log("PUSH SENDED =======> #{DateTime.current.inspect}")
+      log("SCHEDULE_ID =======> #{params['schedule_id']}")
     end
   end
 

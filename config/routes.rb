@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations'}
 
@@ -12,6 +14,9 @@ Rails.application.routes.draw do
     get :movie, controller: :movies, action: :show
     get :search, controller: :search, action: :index
     get :suggested, controller: :suggested, action: :index
+
+    resources :schedule_movies do
+    end
 
     resources :collections do
     end

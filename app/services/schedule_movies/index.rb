@@ -17,8 +17,10 @@ class ScheduleMovies::Index < BusinessProcess::Base
                                              min: @schedule.date.min)
   end
 
-def send_notification
-  @job_id = WorkoutTimeNotificationWorker.perform_in(@reminder_date, push_body: 'yoy',
-                                                                     push_date: @reminder_date,
-                                                                     user_id: profile.user.id)
+  def send_notification
+    @job_id = ScheduleMoviesWorker.perform_in(@reminder_date, push_body: 'yoy',
+                                                              push_date: @reminder_date,
+                                                              user_id: profile.user.id,
+                                                              schedule_id: @schedule.id)
+  end
 end
