@@ -1,7 +1,9 @@
 <div class='background-poster' style='background-image: url(<%= "#{@configuration.base_url}w1920_and_h1080_face#{@images['backdrops'].first['file_path'] if @images['backdrops'].present?}" %>)'></div>
 
   <div class='movie-details-containter'>
+      <%= render partial: './components/movie/modals/schedule_movie' %>
     <div class='details-container'>
+
       <% if @movie %>
         <div class='poster'>
           <%= image_tag("#{@configuration.base_url}w300_and_h450_bestv2#{@movie['poster_path']}") if @movie['poster_path'] %>
@@ -14,11 +16,13 @@
             <% if @movie_on_watchlist.present? %>
               <%= render partial: './components/movie/remove_from_watchlist' %>
               <%= render partial: './components/movie/add_to_watchedlist' %>
+              <%= render partial: './components/movie/schedule_movie' %>
             <% else %>
               <%= render partial: './components/movie/add_to_watchlist' %>
             <% end %>
           </div>
         </div>
+
 
         <div class='overview'>
           <%= tag.p 'Visão geral', class: 'overview-title' %>

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :profile
+  before_action :profile, except: [:index]
 
   def index
     redirect_to profiles_path if user_signed_in?

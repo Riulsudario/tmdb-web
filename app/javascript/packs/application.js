@@ -21,6 +21,7 @@ window.jQuery = $;
 window.$ = $;
 
 require('../stylesheets/application')
+require('../modals/call')
 require('../registrations/new')
 global.toastr = require('toastr')
 require('jquery')
