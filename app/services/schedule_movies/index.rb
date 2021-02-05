@@ -14,7 +14,6 @@ class ScheduleMovies::Index < BusinessProcess::Base
   end
 
   def send_notification
-    byebug
     @job_id = ScheduleMoviesWorker.perform_in(@reminder_date, push_body: 'yoy',
                                                               push_date: @reminder_date,
                                                               user_id: profile.user.id,
