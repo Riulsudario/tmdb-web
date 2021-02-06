@@ -17,6 +17,6 @@ class ScheduleMovies::Index < BusinessProcess::Base
     @job_id = ScheduleMoviesWorker.perform_in(@reminder_date, push_body: 'yoy',
                                                               push_date: @reminder_date,
                                                               user_id: profile.user.id,
-                                                              schedule_id: schedule.id)
+                                                              schedule: schedule)
   end
 end

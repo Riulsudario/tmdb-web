@@ -7,6 +7,7 @@ class ScheduleMoviesWorker < BaseWorker
     push_body = params['push_body']
     push_date = params['push_date']
     user_id = params['user_id']
+    schedule = params['schedule']
 
     user = User.find_by(id: user_id)
 
@@ -15,9 +16,9 @@ class ScheduleMoviesWorker < BaseWorker
     log('---- Schedule Movies ----')
     if push_date.to_datetime > DateTime.current - 2.hours
       log("PUSH_BODY: #{push_body}, to user with email #{user.email}, at #{push_date}")
-      ContactMailer.contact_created.deliver_now
+      ScheduledMovieMailer.scheduled_movie(user.email, schedule.movie_title).deliver_now
       log("PUSH SENDED =======> #{DateTime.current.inspect}")
-      log("SCHEDULE_ID =======> #{params['schedule_id']}")
+      log("SCHEDULE_ID =======> #{schedule.id}")
     end
   end
 
