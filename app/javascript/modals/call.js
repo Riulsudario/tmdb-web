@@ -2,7 +2,7 @@ $(document).ready(function(){
   var $modal = $(".modal-container");
   var $modalContainer = document.querySelector(".modal-container");
 
-  var $btn = $(".icons-content");
+  var $btn = $("#schedule-movie");
   var $span = $(".close");
 
   $btn.click(function() {
