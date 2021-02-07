@@ -16,7 +16,7 @@ class ScheduleMoviesWorker < BaseWorker
     log('---- Schedule Movies ----')
     if push_date.to_datetime > DateTime.current - 2.hours
       log("PUSH_BODY: #{push_body}, to user with email #{user.email}, at #{push_date}")
-      ScheduledMovieMailer.scheduled_movie(user.email, schedule.movie_title).deliver_now
+      ScheduledMovieMailer.scheduled_movie(user.email, schedule).deliver_now
       log("PUSH SENDED =======> #{DateTime.current.inspect}")
       log("SCHEDULE_ID =======> #{schedule.id}")
     end

@@ -1,3 +1,15 @@
 <div class="email-container">
-  vlws flws
+  <p class="text-header">
+    Hi <strong><%= @resource.profile.user.name %></strong>,
+  </p>
+
+  <p class="text-font">The profile: <%= @resource.profile.name %>, scheduled a movie to watch at <%= @resource.date.hour %>:<%= @resource.date.min %> today.</p>
+
+  <div class="display-grid">
+    <a class="button-container" href="<%= "#{Rails.application.credentials[Rails.env.to_sym][:app_domain]}/p/0/movie?id=#{@resource.movie_id}" %>">
+      <button class="button">
+        View movie informations
+      </button>
+    </a>
+  </div>
 </div>

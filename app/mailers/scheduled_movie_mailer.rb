@@ -1,6 +1,7 @@
 class ScheduledMovieMailer < ApplicationMailer
-  def scheduled_movie(email, movie_title)
-    subject = "Don't forget to watch the #{movie_title} movie!"
+  def scheduled_movie(email, schedule)
+    @resource = schedule
+    subject = "Don't forget to watch the #{schedule.movie_title} movie!"
 
     mail(
       to: email,
@@ -8,5 +9,4 @@ class ScheduledMovieMailer < ApplicationMailer
       subject: subject
     )
   end
-
 end
