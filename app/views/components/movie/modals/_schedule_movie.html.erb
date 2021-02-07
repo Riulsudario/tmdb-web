@@ -1,0 +1,22 @@
+<div class='modal-container'>
+  <div class='modal-content'>
+    <span class="close">&times;</span>
+
+    <div class='schedule-container'>
+      <div class='title-container'>
+        <%= tag.p 'Choose a time to schedule the movie' %>
+      </div>
+      <%= form_with url: p_schedule_movies_path, method: :post do |f| %>
+            <%= hidden_field_tag :movie_id, @movie['id'] %>
+            <%= hidden_field_tag :movie_title, @movie['title'] %>
+        <div class='input-container'>
+          <%= f.datetime_field :schedule_date, autocomplete: 'off' %>
+        </div>
+
+        <div class='submit-container'>
+          <%= f.submit 'Send', class: 'submit-button' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

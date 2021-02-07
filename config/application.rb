@@ -11,8 +11,15 @@ module TbmdWeb
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # Timezone
+    off_set = Time.now.gmt_offset
+    config.time_zone = ActiveSupport::TimeZone[off_set]
+    config.active_record.default_timezone = :local
+
     I18n.available_locales = ['pt-BR', :en]
     config.i18n.default_locale = :'pt-BR'
+
+    Redis.exists_returns_integer = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

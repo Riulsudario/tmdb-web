@@ -21,7 +21,7 @@
         <%= tag.p 'Status' %>
       </div>
       <div class='info-text'>
-        <%= tag.p @movie['status'] %>
+        <%= tag.p @movie['status']  if @movie['status'].present?%>
       </div>
     </div>
 
@@ -30,7 +30,7 @@
         <%= tag.p 'Release date' %>
       </div>
       <div class='info-text'>
-        <%= tag.p @movie['release_date'].to_date.strftime('%d/%m/%Y') %>
+        <%= tag.p @movie['release_date'].to_date.strftime('%d/%m/%Y') if @movie['release_date'].present? %>
       </div>
     </div>
 
@@ -39,7 +39,7 @@
         <%= tag.p 'Runtime' %>
       </div>
       <div class='info-text'>
-        <%= tag.p "#{@movie['runtime']} min" %>
+        <%= tag.p "#{@movie['runtime'] if @movie['runtime'].present?} min" %>
       </div>
     </div>
 
@@ -50,7 +50,7 @@
       <% @movie['genres'].each do |genre| %>
         <% if genre %>
           <div class='info-text'>
-            <%= tag.p "#{genre['name']};" %>
+            <%= tag.p "#{genre['name'] if genre['name'].present?};" %>
           </div>
         <% end %>
       <% end %>
