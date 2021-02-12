@@ -16,8 +16,8 @@ module TbmdWeb
     config.time_zone = ActiveSupport::TimeZone[off_set]
     config.active_record.default_timezone = :local
 
-    I18n.available_locales = ['pt-BR', :en]
-    config.i18n.default_locale = :'pt-BR'
+    I18n.available_locales = [:en]
+    config.i18n.default_locale = :en
 
     Redis.exists_returns_integer = false
 
