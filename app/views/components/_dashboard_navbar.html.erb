@@ -11,7 +11,7 @@
     <%= tag.a 'Suggested', href: p_suggested_path %>
   </div>
   <div class="user-content">
-    <%= image_tag('notification.svg', class: 'notification') %>
+    <%= render partial: './components/navbar/notification' %>
     <%= image_tag(@profile.avatar.cropped.url.present? ? @profile.avatar.cropped.url : 'avatar.svg', class: 'user-avatar') %>
   </div>
 </div>
