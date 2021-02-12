@@ -30,6 +30,6 @@ class ScheduleMoviesController < ApplicationController
   end
 
   def schedule_params
-    params.permit(:movie_id, :movie_name, :schedule_date)
+    params.permit(:movie_id, :movie_name, :movie_title, :schedule_date)
   end
 end
