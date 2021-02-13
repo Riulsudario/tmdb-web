@@ -4,6 +4,7 @@
       <%= tag.p @profile.notifications.where(viewed: false).count %>
     </div>
   <% end %>
+
   <%= image_tag('notification.svg', class: 'notification') %>
 
   <div class="dropdown-content">
@@ -14,7 +15,7 @@
     <div class='notifications'>
       <% @profile.notifications.order(created_at: :desc).each do |notification| %>
         <% if notification.present? %>
-          <%= link_to p_movie_path(id: notification.movie_id), class: (notification.viewed ? 'viewed' : '') do %>
+          <%= link_to p_view_notification_path(notification_id: notification.id), class: (notification.viewed ? 'viewed' : '') do %>
             <% movie = Tmdb::Movie.detail(notification.movie_id) %>
 
             <%= image_tag("#{@configuration.base_url}w300#{movie['poster_path']}") if movie['poster_path'] %>
