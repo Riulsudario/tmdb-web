@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get :movie, controller: :movies, action: :show
     get :search, controller: :search, action: :index
     get :suggested, controller: :suggested, action: :index
+    get :view_notification, controller: :notifications, action: :view_notification
 
     resources :schedule_movies do
     end

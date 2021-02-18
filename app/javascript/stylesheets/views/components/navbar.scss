@@ -67,9 +67,114 @@ $white: #FFFFFF;
     justify-content: flex-end;
     margin: 0 100px 0 0;
 
-    .notification {
-      width: 25px;
-      margin: 0 10px 0 10px;
+    .notification-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+
+      .alert {
+        position: absolute;
+        right: 10px;
+        width: 15px;
+        height: 15px;
+        background-color: $default-red;
+        border-radius: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-family: MontserratBold;
+          font-size: 11px;
+          margin: 0;
+          color: white;
+        }
+      }
+
+      .notification {
+        width: 25px;
+        margin: 0 10px 0 10px;
+      }
+
+      .dropdown-content {
+        border-radius: 10px;
+        padding: 0 0 20px 0;
+        overflow: hidden;
+        display: none;
+        position: absolute;
+        background-color: #161b22;
+        width: 400px;
+        max-height: 85vh;
+        right: -140px;
+        top: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        cursor: default;
+
+        .title {
+          p {
+            padding: 10px 0 0 20px;
+            color: white;
+            font-family: MontserratBold;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+          }
+        }
+
+        .notifications {
+          padding: 0 5px 0 5px;
+
+          a {
+            color: white;
+            padding: 10px 0 10px 10px;
+            display: block;
+            display: grid;
+            gap: 0px 0px;
+            grid-template-areas:
+              "a b";
+            text-decoration: none;
+            border-radius: 5px;
+            align-items: center;
+
+            img {
+              width: 50px;
+              height: 50px;
+              object-fit: cover;
+              object-position: center;
+              border-radius: 100%;
+              grid-area: a;
+            }
+
+            .texts {
+              grid-area: b;
+
+              p {
+                margin: 0;
+                padding: 0 0 0 10px;
+                font-family: MontserratSemiBold;
+                text-decoration: none;
+              }
+
+              .date {
+                font-family: MontserratRegular;
+                font-size: 10px;
+              }
+            }
+          }
+
+          .viewed {
+            color: #646669;
+          }
+
+          a:hover {
+            background-color: #0d1117;
+          }
+        }
+      }
+      .dropdown-content:hover {
+        overflow-y: auto;
+      }
     }
 
     .user-avatar {
