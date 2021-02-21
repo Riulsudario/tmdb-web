@@ -12,6 +12,6 @@
   </div>
   <div class="user-content">
     <%= render partial: './components/navbar/notification' %>
-    <%= image_tag(@profile.avatar.cropped.url.present? ? @profile.avatar.cropped.url : 'avatar.svg', class: 'user-avatar') %>
+    <%= render partial: './components/navbar/user' %>
   </div>
 </div>
