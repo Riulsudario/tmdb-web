@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :profiles do
+    delete :delete, action: :delete
   end
 
   resources :p do

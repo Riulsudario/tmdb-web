@@ -21,9 +21,18 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def delete
+    profile = Profile.find(profile_params[:profile_id])
+
+    profile.destroy
+
+    flash[:notice] = 'Profile deleted!'
+    redirect_to profiles_path
+  end
+
   private
 
   def profile_params
-    params.permit(:name, :avatar)
+    params.permit(:name, :avatar, :profile_id)
   end
 end
