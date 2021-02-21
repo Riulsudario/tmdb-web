@@ -33,7 +33,7 @@ $white: #FFFFFF;
         color: $white;
       }
 
-      form {
+      .form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -126,20 +126,6 @@ $white: #FFFFFF;
           }
         }
 
-
-        .image-container {
-          width: 40px;
-          padding: 15px;
-          border: 2px solid $white;
-          border-radius: 100%;
-          margin: 0 auto;
-
-          .omni-auth {
-            width: 32px;
-          }
-        }
-
-
         .buttons {
           grid-area: c;
 
@@ -163,60 +149,61 @@ $white: #FFFFFF;
             color: $form-background;
             background-color: $white;
           }
-
-          .omni-auth {
-            display: block;
-            width: fit-content;
-            margin: 0 auto;
-
-            .facebook {
-              background-color: #4177F2;
-
-              img {
-                left: 10px;
-                border-radius: 5px;
-              }
-            }
-
-            .google {
-              background-color: #4285F4;
-
-              img {
-                background-color: white;
-                padding: 8px;
-                left: 2px;
-                border-radius: 5px;
-              }
-            }
-
-            a {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-decoration: none;
-              border-radius: 5px;
-              width: 410px;
-              margin: 5px 0 5px 0;
-              position: relative;
-              height: 50px;
-
-              img {
-                width: 30px;
-                position: absolute;
-              }
-
-              p {
-                padding: 0 15px 0 15px;
-                text-decoration: none;
-                font-family: MontserratSemiBold;
-                color: white;
-              }
-            }
-          }
         }
       }
     }
 
+    .omni-auth {
+      margin: 10px 0 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .facebook {
+        border-radius: 5px;
+        background-color: #4177F2;
+
+        img {
+          left: 10px;
+          border-radius: 5px;
+        }
+      }
+
+      .google {
+        border-radius: 5px;
+        background-color: #4285F4;
+
+        img {
+          background-color: white;
+          padding: 8px;
+          left: 2px;
+          border-radius: 5px;
+        }
+      }
+
+      button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 410px;
+        position: relative;
+        height: 50px;
+        padding: 0 15px 0 15px;
+        font-family: MontserratSemiBold;
+        color: white;
+
+        img {
+          width: 30px;
+          position: absolute;
+        }
+      }
+    }
 
     h1 {
       margin: 0;

@@ -22,6 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Omniauth
+gem 'koala', '~> 3.0'
+gem 'omniauth-facebook', '~> 4.0'
+gem "omniauth-rails_csrf_protection"
+
+
 # Backgroud Works
 gem 'sidekiq'
 gem 'sidekiq-cron', '~> 1.1'
@@ -29,7 +35,7 @@ gem 'sidekiq-status'
 gem 'redis-namespace'
 gem 'redis'
 
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 gem 'modulejs-rails'
 

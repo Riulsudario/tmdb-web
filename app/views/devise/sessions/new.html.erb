@@ -8,12 +8,12 @@
         <div class="login-form-container">
 
           <div class="field">
-            <%= f.email_field :email, autocomplete: "email", id: "email", class: "input", required: true %>
-            <%= f.label :emails, 'Email', id: 'emailLabel', class: "label" %>
+            <%= f.email_field :email, autocomplete: "email", class: "input", required: true %>
+            <%= f.label :emails, 'Email', class: "label" %>
           </div>
 
           <div class="field">
-            <%= f.password_field :password, autocomplete: "new-password", id: 'userPassword', class: "input", required: true %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "input", required: true %>
             <%= f.label :password, 'Password', class: 'label' %>
             <%= tag.a 'Dont have an account?', class: 'links', href: new_user_registration_path %>
             <%= tag.a 'Forgot your password?', class: 'links', href: new_user_password_path %>
@@ -24,21 +24,21 @@
           <div class="field">
             <%= f.submit 'Submit', class: "submit-button" %>
           </div>
-
-          <div class='omni-auth'>
-            <%= link_to '#', class: 'facebook' do %>
-              <p>Continue with Facebook</p>
-              <%= image_tag 'facebook.png' %>
-            <% end %>
-
-            <%= link_to '#', class: 'google' do %>
-              <%= image_tag 'google.svg' %>
-              <p>Continue with Google</p>
-            <% end %>
-          </div>
         </div>
-
       </div>
     <% end %>
+    <div class='omni-auth'>
+        <%= form_tag(user_facebook_omniauth_authorize_path, class: 'facebook', method: :post) do %>
+          <button type='submit'>Continue with Facebook</p>
+          <%= image_tag 'facebook.png' %>
+        <% end %>
+    </div>
+
+    <div class='omni-auth'>
+      <%= form_tag('#', class: 'google', method: :post) do %>
+        <button type='submit'>Continue with Google</p>
+        <%= image_tag 'google.svg' %>
+      <% end %>
+    </div>
   </div>
 </div>

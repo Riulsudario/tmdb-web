@@ -16,6 +16,10 @@ class SessionsController < Devise::SessionsController
     end
   end
 
+  def facebook_auth
+    response_handler(Users::FacebookAuthService.call(fb_auth_params: fb_auth_params))
+  end
+
   private
 
   def user_params
