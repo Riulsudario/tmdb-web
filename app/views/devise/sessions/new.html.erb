@@ -15,7 +15,7 @@
           <div class="field">
             <%= f.password_field :password, autocomplete: "new-password", id: 'userPassword', class: "input", required: true %>
             <%= f.label :password, 'Password', class: 'label' %>
-            <%= tag.a 'Have an account?', class: 'links', href: new_user_password_path %>
+            <%= tag.a 'Dont have an account?', class: 'links', href: new_user_registration_path %>
             <%= tag.a 'Forgot your password?', class: 'links', href: new_user_password_path %>
           </div>
         </div>
