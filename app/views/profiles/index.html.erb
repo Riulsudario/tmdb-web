@@ -3,12 +3,17 @@
   <div class='profile-container'>
     <% @profiles.each_with_index do |profile, i|  %>
       <% if profile %>
-        <%= link_to p_dashboard_path(p_id: i), class:'profile-content' do %>
-          <% if profile.avatar.present? %>
-            <div class='background-profile' style='background-image: url(<%= profile.avatar.url %>)'></div>
+        <div class='profile-card'>
+          <%= link_to p_dashboard_path(p_id: i), class:'profile-content' do %>
+            <% if profile.avatar.present? %>
+              <div class='background-profile' style='background-image: url(<%= profile.avatar.url %>)'></div>
+            <% end %>
+            <%= tag.p profile.name %>
           <% end %>
-          <%= tag.p profile.name %>
-        <% end %>
+          <%= button_to profile_delete_path(profile_id: profile.id), class: 'delete', method: :delete do %>
+            <%= image_tag 'remove.svg'%>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
 
