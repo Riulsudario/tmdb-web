@@ -16,12 +16,6 @@ class SessionsController < Devise::SessionsController
     end
   end
 
-  def destroy
-    sign_out @user
-    flash[:alert] = t('views.sessions.new.session_destroyed')
-    redirect_to new_user_session_path
-  end
-
   private
 
   def user_params
