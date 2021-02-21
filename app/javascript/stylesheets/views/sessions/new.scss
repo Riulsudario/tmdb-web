@@ -121,7 +121,7 @@ $white: #FFFFFF;
       }
 
       .omni-auth {
-        margin: -50px 0 0 0;
+        margin: -150px 0 0 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -133,18 +133,6 @@ $white: #FFFFFF;
 
           img {
             left: 10px;
-            border-radius: 5px;
-          }
-        }
-
-        .google {
-          border-radius: 5px;
-          background-color: #4285F4;
-
-          img {
-            background-color: white;
-            padding: 8px;
-            left: 2px;
             border-radius: 5px;
           }
         }
