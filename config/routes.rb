@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  post :facebook_auth, controller: :sessions, action: :facebook_auth
-
   resources :profiles do
     delete :delete, action: :delete
   end
