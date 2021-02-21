@@ -26,7 +26,5 @@ require('../modals/call')
 require('../modals/notifications')
 require('../modals/user')
 
-require('../registrations/new')
-
 global.toastr = require('toastr')
 require('jquery')
