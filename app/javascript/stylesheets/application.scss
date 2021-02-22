@@ -1,4 +1,29 @@
+// Views
 @import './views/registrations/new';
 @import './views/sessions/new';
-@import './globals.scss';
+@import './views/home/dashboard/dashboard';
+@import './views/movies/show';
+@import './views/search/index';
+@import './views/profiles/index';
+@import './views/profiles/new';
+@import './views/watchlist/index';
+@import './views/watchedlist/index';
+@import './views/suggested/index';
+@import './views/collection/show';
+
+// Components
+@import './views/components/navbar';
+@import './views/components/movies_list';
+@import './views/components/movie/overview';
+@import './views/components/movie/informations';
+@import './views/components/movie/sidebar';
+@import './views/components/movie/trailers';
+@import './views/components/movie/similar_movies';
+@import './views/components/movie/collection';
+
+// Toastr
 @import 'toastr';
+
+// Global css
+@import './globals.scss';
+@import './scrollbar.scss';

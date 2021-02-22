@@ -1,0 +1,15 @@
+<div class='trailer-container'>
+  <div class='trailer-text'>
+    <%= tag.p 'Trailers' %>
+  </div>
+  <% if @trailers['youtube'].present? %>
+    <div class='trailer-video'>
+      <iframe width='500' height='277' src='https://www.youtube.com/embed/<%= @trailers['youtube'].first['source'] %>' frameborder="0" allowfullscreen> </iframe>
+      <iframe width='500' height='277' src='https://www.youtube.com/embed/<%= @trailers['youtube'].last['source'] %>' frameborder="0" allowfullscreen> </iframe>
+    </div>
+  <% else %>
+    <div class='no-trailer-container'>
+      <%= tag.p 'This movie does not have a trailer yet...' %>
+    </div>
+  <% end %>
+</div>

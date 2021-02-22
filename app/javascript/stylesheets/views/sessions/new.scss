@@ -1,11 +1,10 @@
-$default-grey: #707070;
-$default-red: #db131d;
-$form-background: #F5F5F5;
+$form-background: #161b22;
+$background: #0d1117;
 $white: #FFFFFF;
 
 
   .login {
-    background-color: $form-background;
+    background-color: $background;
     width: 100vw;
     height: 100vh;
 
@@ -15,119 +14,25 @@ $white: #FFFFFF;
 
 
     .login-container {
-      background-color: $white;
-      width: 94vw;
+      background-color: $form-background;
+      width: 50vw;
       height: 90vh;
 
       border-radius: 30px;
 
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "a b b"
-        "a b b"
-        "a b b";
-
-      .register-box {
-        background-color: $default-red;
-        grid-area: a;
-        color: $white;
-        text-align: center;
-        padding: 50px;
-
-        border-radius: 30px 0 0 32px;
-
-        .back {
-          margin: 0;
-          padding: 0;
-          border: none;
-          position: relative;
-        }
-
-        .back:hover {
-          background: transparent;
-        }
-
-        .back-arrow {
-          width: 38px;
-          transform: scaleX(-1);
-          position: relative;
-          left: -50%;
-          top: -25px;
-          }
-
-          h2 {
-            margin-top: 70px;
-            font-family: "SegoeBold";
-          }
-
-          p {
-            font-family: "SegoeRegular";
-            font-size: 18px;
-            margin-bottom: 50px;
-          }
-
-          a {
-            text-decoration: none;
-            color: $white;
-            font-family: "SegoeBold";
-            padding: 10px 100px 10px 100px;
-            border: 2px solid $white;
-            border-radius: 100px;
-            cursor: pointer;
-          }
-
-          a:hover {
-            background-color: $white;
-            color: $default-red;
-            transition: 0.3s;
-          }
-      }
 
       .login-form {
-        grid-area: b;
         text-align: center;
 
         h1 {
-          margin-top: 70px;
-          margin-bottom: 10px;
+          margin-top: 30px;
           font-family: "SegoeBold";
-          color: $default-grey;
-        }
-
-        a {
-          text-decoration: none;
-          .omni-auth {
-            width: 32px;
-            padding: 15px;
-            border: 2px solid $default-grey;
-            border-radius: 100%;
-            margin: 10px;
-          }
-        }
-
-        p {
-          font-family: "SegoeRegular";
-          color: $default-grey;
-          font-size: 24px;
-          margin-top: 0;
-        }
-
-        .previous-container {
-          height: 0;
-          a {
-            position: relative;
-            left: -200px;
-            top: -50px;
-            .previous {
-              width: 30px;
-              transform: scaleX(-1);
-            }
-          }
+          color: $white;
+          margin-bottom: 50px;
         }
 
         .login-form-container {
-
           .field {
             position: relative;
             line-height: 14px;
@@ -135,14 +40,15 @@ $white: #FFFFFF;
             display: inline-block;
 
             .input {
+              background-color: $background;
               position: relative;
-              border: #A3AEB2 solid 1px;
+              border: 1px solid #21262d;
               border-radius: 8px;
               padding-left: 20px;
               padding-right: 16px;
               width: 370px;
               height: 50px;
-              color: $default-grey;
+              color: $white !important;
               font-size: 16px;
               font-family: "SegoeRegular";
               margin: 12px;
@@ -160,8 +66,12 @@ $white: #FFFFFF;
               }
             }
 
+            .input:focus {
+              outline: none;
+            }
+
             label {
-              color: $default-grey;
+              color: $white;
               font-size: 18px;
               position: absolute;
               z-index: 2;
@@ -169,16 +79,16 @@ $white: #FFFFFF;
               top: 30px;
               padding: 0 2px;
               pointer-events: none;
-              background: white;
               transition: transform 300ms ease;
               transform: translateY(-26px);
               font-family: "SegoeRegular";
             }
-            .forgot-password {
-              color: $default-grey;
+
+            .links {
+              color: $white;
               text-decoration: underline;
               font-family: 'SegoeRegular';
-              margin:0 20px 0 0;
+              margin:0 20px 10px 0;
               font-size: 16px;
               display: block;
               text-align: right;
@@ -187,38 +97,66 @@ $white: #FFFFFF;
         }
 
         .buttons {
-          .continue-register {
-            text-align: right;
-            a {
-              font-family: "SegoeRegular";
-              font-size: 20px;
-              text-decoration: none;
-              color: $default-grey;
-              position: fixed;
-              right: 19%;
-
-              .right-arrow {
-                width: 30px;
-                position: relative;
-                top: 10px;
-              }
-            }
-
+          .submit-button {
+            position: relative;
+            background-color: transparent;
+            border: $white solid 2px;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 16px;
+            width: 408px;
+            height: 50px;
+            color: $white;
+            font-size: 20px;
+            font-family: "SegoeBold";
+            margin: 12px;
+            cursor: pointer;
           }
-              .submit-button {
-                position: relative;
-                background-color: $default-red;
-                border: $default-red solid 1px;
-                border-radius: 8px;
-                padding-left: 20px;
-                padding-right: 16px;
-                width: 408px;
-                height: 50px;
-                color: $white;
-                font-size: 20px;
-                font-family: "SegoeBold";
-                margin: 12px;
-              }
+
+          .submit-button:hover {
+            color: $form-background;
+            background-color: $white;
+          }
+        }
+      }
+
+      .omni-auth {
+        margin: -150px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .facebook {
+          border-radius: 5px;
+          background-color: #4177F2;
+
+          img {
+            left: 10px;
+            border-radius: 5px;
+          }
+        }
+
+        button {
+          cursor: pointer;
+          background: none;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          border-radius: 5px;
+          width: 410px;
+          position: relative;
+          height: 50px;
+          padding: 0 15px 0 15px;
+          font-family: MontserratSemiBold;
+          color: white;
+
+          img {
+            width: 30px;
+            position: absolute;
+          }
         }
       }
 

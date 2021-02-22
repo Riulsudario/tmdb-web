@@ -16,10 +16,8 @@ class SessionsController < Devise::SessionsController
     end
   end
 
-  def destroy
-    sign_out @user
-    flash[:alert] = t('views.sessions.new.session_destroyed')
-    redirect_to new_user_session_path
+  def facebook_auth
+    response_handler(Users::FacebookAuthService.call(fb_auth_params: fb_auth_params))
   end
 
   private

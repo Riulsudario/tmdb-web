@@ -1,0 +1,241 @@
+$default_gray: #707070;
+$default-red: #db131d;
+$form-background: #F5F5F5;
+$white: #FFFFFF;
+
+.navbar {
+  height: 10vh;
+  background-color: #161b22;
+  display: inline-flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  .search-bar {
+    width: 40%;
+    display: flex;
+    align-items: center;
+
+    form {
+      width: 100%;
+
+      input {
+        width: 100%;
+        color: white;
+        margin: 0 30px 0 30px;
+        height: 25px;
+        background-color: #0d1117;
+        border: 1px solid #21262d;
+        padding: 5px 10px 5px 10px;
+      }
+
+      ::placeholder {
+        font-family: MontserratRegular;
+        font-size: 14px;
+        color: $white;
+        opacity: 1;
+      }
+    }
+
+  }
+
+  .links {
+    width: 50%;
+    height: 10vh;
+    margin: 0 100px 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+      font-family: MontserratSemiBold;
+      color: $white;
+      text-decoration: none;
+      margin: 0 10px 0 10px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+  }
+
+  .user-content {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 100px 0 0;
+
+    .user-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+
+      .dropdown {
+        border-radius: 10px;
+        padding: 10px 0 10px 0;
+        overflow: hidden;
+        display: none;
+        position: absolute;
+        background-color: #161b22;
+        width: 200px;
+        max-height: 85vh;
+        right: -90px;
+        top: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        cursor: default;
+
+        .menu {
+          padding: 0 5px 0 5px;
+
+          a, form {
+            color: white;
+            display: grid;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0;
+            padding: 10px;
+            font-family: MontserratSemiBold;
+            text-decoration: none;
+            font-size: 15px;
+
+            p, input {
+              text-align: left;
+              color: white;
+              font-family: MontserratSemiBold;
+              background-color: transparent;
+              border: none;
+              margin: 0;
+              padding: 0;
+              font-size: 15px;
+            }
+          }
+
+          form:hover {
+            background-color: #0d1117;
+          }
+
+          a:hover {
+            background-color: #0d1117;
+          }
+        }
+      }
+    }
+    .notification-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+
+      .alert {
+        position: absolute;
+        right: 10px;
+        width: 15px;
+        height: 15px;
+        background-color: $default-red;
+        border-radius: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-family: MontserratBold;
+          font-size: 11px;
+          margin: 0;
+          color: white;
+        }
+      }
+
+      .notification {
+        width: 25px;
+        margin: 0 10px 0 10px;
+      }
+
+      .dropdown-content {
+        border-radius: 10px;
+        padding: 0 0 20px 0;
+        overflow: hidden;
+        display: none;
+        position: absolute;
+        background-color: #161b22;
+        width: 400px;
+        max-height: 85vh;
+        right: -140px;
+        top: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        cursor: default;
+
+        .title {
+          p {
+            padding: 10px 0 0 20px;
+            color: white;
+            font-family: MontserratBold;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+          }
+        }
+
+        .notifications {
+          padding: 0 5px 0 5px;
+
+          a {
+            color: white;
+            padding: 10px 0 10px 10px;
+            display: grid;
+            gap: 0px 0px;
+            grid-template-areas:
+              "a b";
+            text-decoration: none;
+            border-radius: 5px;
+            align-items: center;
+
+            img {
+              width: 50px;
+              height: 50px;
+              object-fit: cover;
+              object-position: center;
+              border-radius: 100%;
+              grid-area: a;
+            }
+
+            .texts {
+              grid-area: b;
+
+              p {
+                margin: 0;
+                padding: 0 0 0 10px;
+                font-family: MontserratSemiBold;
+                text-decoration: none;
+              }
+
+              .date {
+                font-family: MontserratRegular;
+                font-size: 10px;
+              }
+            }
+          }
+
+          .viewed {
+            color: #646669;
+          }
+
+          a:hover {
+            background-color: #0d1117;
+          }
+        }
+      }
+      .dropdown-content:hover {
+        overflow-y: auto;
+      }
+    }
+
+    .user-avatar {
+      margin: 0 10px 0 10px;
+      width: 30px;
+      border-radius: 100%;
+    }
+  }
+}

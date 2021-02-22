@@ -1,0 +1,24 @@
+<div class='create-profile-container'>
+  <div class='create-profile-form'>
+    <div class='title-container'>
+      <%= tag.p 'Create a profile' %>
+    </div>
+    <%= form_with url: "/profiles", method: :post do |f| %>
+      <div class='avatar-container'>
+        <%= image_tag 'avatar.svg' %>
+      </div>
+
+      <div class='avatar-input-container'>
+        <%= f.file_field 'avatar', class:'avatar-input' %>
+      </div>
+
+      <div class='input-container'>
+        <%= f.text_field :name, placeholder: 'Name', autocomplete: 'off' %>
+      </div>
+
+      <div class='submit-container'>
+        <%= f.submit 'Send', class: 'submit-button' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_181832) do
+ActiveRecord::Schema.define(version: 2021_02_12_215822) do
+
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "message"
+    t.integer "movie_id"
+    t.boolean "viewed", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_notifications_on_profile_id"
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "avatar"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "schedule_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "movie_id"
+    t.string "movie_title"
+    t.datetime "date"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_schedule_movies_on_profile_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +61,25 @@ ActiveRecord::Schema.define(version: 2021_01_17_181832) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "watchedlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_watchedlists_on_profile_id"
+  end
+
+  create_table "watchlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_watchlists_on_profile_id"
+  end
+
+  add_foreign_key "notifications", "profiles"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "schedule_movies", "profiles"
+  add_foreign_key "watchedlists", "profiles"
+  add_foreign_key "watchlists", "profiles"
 end

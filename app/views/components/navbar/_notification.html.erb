@@ -1,0 +1,32 @@
+<div class='notification-container'>
+  <% if @profile.notifications.where(viewed: false).present? %>
+    <div class='alert'>
+      <%= tag.p @profile.notifications.where(viewed: false).count %>
+    </div>
+  <% end %>
+
+  <%= image_tag('notification.svg', class: 'notification') %>
+
+  <div class="dropdown-content">
+    <div class='title'>
+      <%= tag.p 'Notifications' %>
+    </div>
+
+    <div class='notifications'>
+      <% @profile.notifications.order(created_at: :desc).each do |notification| %>
+        <% if notification.present? %>
+          <%= link_to p_view_notification_path(notification_id: notification.id), class: (notification.viewed ? 'viewed' : '') do %>
+            <% movie = Tmdb::Movie.detail(notification.movie_id) %>
+
+            <%= image_tag("#{@configuration.base_url}w300#{movie['poster_path']}") if movie['poster_path'] %>
+            <div class='texts'>
+              <%= tag.p notification.message %>
+
+              <%= tag.p time_ago_in_words(notification.created_at), class: 'date' %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

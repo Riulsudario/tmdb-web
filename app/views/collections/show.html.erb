@@ -1,0 +1,15 @@
+<div class='collection-detail-container'>
+  <%= render partial: './components/dashboard_navbar' %>
+
+  <div class='background-poster' style='background-image: url(<%= "#{@configuration.base_url}w1920_and_h1080_face#{@collection['backdrop_path']}" %>)'></div>
+
+  <div class='title-container'>
+    <%= tag.p @collection['name'] %>
+    <%= tag.p @collection['overview'], class:'overview' %>
+  </div>
+
+  <% @movies = @collection['parts'] %>
+  <% if @movies.present? %>
+    <%= render partial: './components/collection/movies_list' %>
+  <% end %>
+</div>

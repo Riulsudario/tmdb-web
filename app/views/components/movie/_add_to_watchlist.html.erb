@@ -1,0 +1,7 @@
+<%= form_tag(p_watchlists_path, method: :post, id: 'watchlist-form') do %>
+  <div onClick="document.forms['watchlist-form'].submit();" class='icons-content' title='Add movie to watchlist!'>
+    <%= hidden_field_tag :movie_id, @movie['id'] %>
+    <%= image_tag 'like-shape.svg', class: 'icon-shape' %>
+    <%= image_tag 'like-line.svg', class: 'icon-line' %>
+  </div>
+<% end %>

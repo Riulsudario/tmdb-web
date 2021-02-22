@@ -21,7 +21,21 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
+
+# Omniauth
+gem 'koala', '~> 3.0'
+gem 'omniauth-facebook', '~> 4.0'
+gem "omniauth-rails_csrf_protection"
+
+
+# Backgroud Works
+gem 'sidekiq'
+gem 'sidekiq-cron', '~> 1.1'
+gem 'sidekiq-status'
+gem 'redis-namespace'
+gem 'redis'
+
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 gem 'modulejs-rails'
 
@@ -29,8 +43,19 @@ gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Image upload
+gem 'carrierwave', '~> 2.0'
+gem 'carrierwave-aws'
+gem 'rmagick'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+# The Movie DataBase
+gem 'themoviedb'
+
+# Business Process
+gem 'business_process'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

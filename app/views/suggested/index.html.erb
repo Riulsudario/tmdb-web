@@ -1,0 +1,10 @@
+<div class='suggested-container'>
+  <%= render partial: './components/dashboard_navbar' %>
+  <div class='title-container'>
+    <%= tag.p 'Movies you might like' %>
+  </div>
+  <% @movies = @suggested %>
+  <% if @movies.present? %>
+    <%= render partial: './components/movies_list' %>
+  <% end %>
+</div>

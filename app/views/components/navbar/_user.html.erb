@@ -1,0 +1,15 @@
+<div class='user-container'>
+  <%= image_tag(@profile.avatar.cropped.url.present? ? @profile.avatar.cropped.url : 'avatar.svg', class: 'user-avatar') %>
+
+  <div class="dropdown">
+
+    <div class='menu'>
+      <%= link_to profiles_path do %>
+        <p>Profiles</p>
+      <% end %>
+
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+    </div>
+  </div>
+</div>

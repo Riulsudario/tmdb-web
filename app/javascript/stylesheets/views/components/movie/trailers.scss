@@ -1,0 +1,28 @@
+.trailer-container {
+  text-align: center;
+  .trailer-text {
+    p {
+      color: white;
+      font-family: MontserratSemiBold;
+      font-size: 24px;
+    }
+  }
+
+  .trailer-video {
+    iframe {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  .no-trailer-container {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      color: white;
+      font-family: MontserratRegular;
+      font-size: 24px;
+    }
+  }
+}

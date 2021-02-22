@@ -1,0 +1,8 @@
+<div class="navbar">
+  <%= image_tag ('logodeitada4.png'), class: 'logo' %>
+  <div class="display-flex">
+    <%= tag.a t('views.home.index.events') %>
+    <%= tag.a t('views.home.index.signin'), href: new_user_session_path %>
+    <%= tag.a t('views.home.index.signup'), href: new_user_registration_path, class: 'registration-button' %>
+  </div>
+</div>

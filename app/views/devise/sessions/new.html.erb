@@ -1,50 +1,36 @@
 <div class="login">
   <div class="login-container">
-    <div class="register-box">
-      <a href="#" class="back">
-        <%= image_tag('right-arrow-white.svg', class: 'back-arrow') %>
-      </a>
-      <%= tag.h2 t('views.sessions.new.first_time')%>
-      <%= tag.p t('views.sessions.new.register_form')%>
-
-    <%= tag.a t('views.sessions.new.register_button'), href: new_user_registration_path %>
-    </div>
-
     <div class="login-form">
-      <%= tag.h1 t('views.sessions.new.login')%>
-
-      <a href="#">
-        <%= image_tag('facebook-logo.svg', class: 'omni-auth') %>
-      </a>
-      <a href="#">
-        <%= image_tag('google-logo.svg', class: 'omni-auth') %>
-      </a>
-
-      <%= tag.p t('views.sessions.new.or_use_email')%>
+      <%= tag.h1 'Sign In' %>
 
       <%= form_with url: user_session_path, method: :post, remote: false, local: true do |f| %>
 
         <div class="login-form-container">
 
           <div class="field">
-            <%= f.email_field :email, autocomplete: "email", id: "email", class: "input", required: true %>
-            <%= f.label :emails, t('views.registrations.new.email'), id: 'emailLabel', class: "label" %>
+            <%= f.email_field :email, autocomplete: "email", class: "input", required: true %>
+            <%= f.label :emails, 'Email', class: "label" %>
           </div>
 
           <div class="field">
-            <%= f.password_field :password, autocomplete: "new-password", id: 'userPassword', class: "input", required: true %>
-            <%= f.label :password, t('views.registrations.new.password'), class: 'label' %>
-            <%= tag.a t('views.sessions.new.forgot_password'), class: 'forgot-password', href: new_user_password_path %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "input", required: true %>
+            <%= f.label :password, 'Password', class: 'label' %>
+            <%= tag.a 'Dont have an account?', class: 'links', href: new_user_registration_path %>
           </div>
         </div>
 
         <div class="buttons">
           <div class="field">
-            <%= f.submit t('views.registrations.new.save'), class: "submit-button" %>
+            <%= f.submit 'Submit', class: "submit-button" %>
           </div>
         </div>
-
       </div>
     <% end %>
+    <div class='omni-auth'>
+        <%= form_tag(user_facebook_omniauth_authorize_path, class: 'facebook', method: :post) do %>
+          <button type='submit'>Continue with Facebook</p>
+          <%= image_tag 'facebook.png' %>
+        <% end %>
+    </div>
   </div>
 </div>
