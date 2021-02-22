@@ -31,7 +31,7 @@ You need to have ruby on rails installed on your machine. Follow steps: https://
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/riulsudario/tmdb-web.git
+   git clone https://github.com/riulsudario/themoviedb-rails.git
    ```
 2. Install gems
    ```sh
@@ -79,7 +79,7 @@ You need to have ruby on rails installed on your machine. Follow steps: https://
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/riulsudario/tmdb-web/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/riulsudario/themoviedb-rails/issues) for a list of proposed features (and known issues).
 
 
 ## Features
@@ -138,17 +138,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Riul Sudário de Souza - rsudario47@gmail.com
 
-Project Link: [https://github.com/riulsudario/tmdb-web](https://github.com/riulsudario/tmdb-web)
+Project Link: [https://github.com/riulsudario/themoviedb-rails](https://github.com/riulsudario/themoviedb-rails)
 
-[contributors-shield]: https://img.shields.io/github/contributors/riulsudario/tmdb-web.svg?style=for-the-badge
-[contributors-url]: https://github.com/riulsudario/tmdb-web/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/riulsudario/tmdb-web.svg?style=for-the-badge
-[forks-url]: https://github.com/riulsudario/tmdb-web/network/members
-[stars-shield]: https://img.shields.io/github/stars/riulsudario/tmdb-web.svg?style=for-the-badge
-[stars-url]: https://github.com/riulsudario/tmdb-web/stargazers
-[issues-shield]: https://img.shields.io/github/issues/riulsudario/tmdb-web.svg?style=for-the-badge
-[issues-url]: https://github.com/riulsudario/tmdb-web/issues
-[license-shield]: https://img.shields.io/github/license/riulsudario/tmdb-web.svg?style=for-the-badge
-[license-url]: https://github.com/riulsudario/tmdb-web/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/riulsudario/themoviedb-rails.svg?style=for-the-badge
+[contributors-url]: https://github.com/riulsudario/themoviedb-rails/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/riulsudario/themoviedb-rails.svg?style=for-the-badge
+[forks-url]: https://github.com/riulsudario/themoviedb-rails/network/members
+[stars-shield]: https://img.shields.io/github/stars/riulsudario/themoviedb-rails.svg?style=for-the-badge
+[stars-url]: https://github.com/riulsudario/themoviedb-rails/stargazers
+[issues-shield]: https://img.shields.io/github/issues/riulsudario/themoviedb-rails.svg?style=for-the-badge
+[issues-url]: https://github.com/riulsudario/themoviedb-rails/issues
+[license-shield]: https://img.shields.io/github/license/riulsudario/themoviedb-rails.svg?style=for-the-badge
+[license-url]: https://github.com/riulsudario/themoviedb-rails/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/riulsudario
